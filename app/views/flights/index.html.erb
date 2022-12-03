@@ -1,0 +1,20 @@
+
+
+  <div class="container">
+    <%= render "search_form" %>
+  </div>
+
+  <% unless @available_flights.nil? %>
+    <% if @available_flights.any? %>
+      
+      <div class="container">
+        <h4 class="text-center mt-5">Scheduled flights on <%= @selected_date.strftime('%B %d, %Y') %></h4>
+    
+        <div class="row mb-3">
+          <%= render "search_results_form" %>
+        </div>
+      </div>
+    <% else %>
+      <p class="p-3 text-center">There are no available flights on the selected date</p>
+    <% end %>
+  <% end %>
